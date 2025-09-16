@@ -1,0 +1,33 @@
+🔹 How the face storing script works
+
+Ask for name
+
+It prompts: Enter person's name:
+
+That becomes the folder name where face images are saved.
+
+Open camera feed
+
+Uses OpenCV (cv2.VideoCapture(0)) to grab frames in real-time.
+
+Detect faces
+
+Converts each frame to grayscale.
+
+Runs Haarcascade (OpenCV’s built-in face detector).
+
+For every face detected → draws a rectangle.
+
+Crop + Save face images
+
+Takes the part of the frame where the face is.
+
+Saves it as face_0.jpg, face_1.jpg, ... inside your person’s folder.
+
+Loop until enough images (50 by default) or you press q
+
+Each new detection increments count.
+
+When count >= 50, the loop stops automatically.
+
+Otherwise, you can stop early by pressing q.
